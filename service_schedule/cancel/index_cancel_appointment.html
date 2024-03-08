@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../../src/icons/font/bootstrap-icons.css" >
+    <title>Servicios | cancelados</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <!--persona online en sesión -->
+            <div>
+                <i class="bi bi-person-circle" style="color: white; font-size: 2rem;"></i>
+                <a class="navbar-brand" href="#">Jhonatan Martinez</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-end">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../../service_schedule/cliente_list.html">Clientes</a>
+                        
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Agendaciones
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../schedule/index_scheduled_appointments.html">Por realizar</a>
+                            <a class="dropdown-item" href="../postpone/index_postpone_services.html">Aplazados</a>
+                            <a class="dropdown-item" href="../finished/index_finished_appointment.html">Finalizados</a>
+                            <a class="dropdown-item" href="../cancel/index_cancel_appointment.html">Canceladas</a>
+
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../service_schedule/index_agenda.html">Calendario</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Log out</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h3 class="mt-4 text-center">Cancelados</h3>
+        <div class="row justify-content-center">
+            
+            <!-- rapid search bar -->
+            <div class="col-12 col-md-5 d-flex mb-2 px-2">
+                <input class="form-control" type="text" id="search" placeholder="Nombre, Barrio, Apellido">
+                <button class="btn btn-success mx-2" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- services appointment card -->
+            <div class="col-12 col-md-4 col-lg-3 p-2">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text">
+                                    Nombre: Madeleine
+                                </p>
+                                <p class="card-text">
+                                    Apellido: Mogollon
+                                </p>
+                                <p class="card-text">
+                                    Barrio: Los caracoles
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text">
+                                    Fecha: 26 Abril 2024
+                                </p>
+                                <p class="card-text">
+                                    Hora: 4:50pm
+                                </p>
+                                <p class="card-text">
+                                    Dia: Martes
+                                </p>
+
+                            </div>
+                            <div class="col-12 text-center">
+                                <div class="mb-3">
+                                    <h4 class="card-title">Acciones</h4>
+                                    <button class="btn btn-info mb-2" data-bs-target="#modal_appointment_details"
+                                        data-bs-toggle="modal">Detalles</button>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="card-text">Estado</p>
+                                    <h4 class="card-title text-color-red">Cancelado</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+    </div>
+    <!-- modal appointment details -->
+    <div class="modal fade" id="modal_appointment_details">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Detalles de la cita</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mt-4">
+
+                        <!-- details of appointment-->
+                        <div class="col-12 col-md-4">
+                            <div class="mb-3 p-1">
+                                <p>id servicio: 28412</p>
+                                <p>Fecha de la cita: 13/02/2024</p>
+                                <!-- hour for the selected day -->
+                                <p>Hora: 10:30Am</p>
+                            </div>
+            
+                            <div class="mb-3">
+                                <p>Categoria: Mantenimiento</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- details of offered service -->
+                            <div class="mb-3">
+                                <h4>Descripción</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, incidunt.</p>
+                            </div>
+                            <div class="mb-3">
+                                <p>Valor estimado: 45.000</p>
+                            </div>
+                            <div class="mb-3">
+                                <p>Estado: Cancelado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../src/js/bootstrap.bundle.min.js" ></script>
+</body>
+</html>

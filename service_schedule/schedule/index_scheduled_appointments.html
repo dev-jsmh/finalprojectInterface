@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../src/icons/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <!-- Jhonatan samuel Martinez Hernandez -->
+    <!-- Software Analysis and Development -->
+
+    <nav class="navbar navbar-expand-md bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <!--persona online en sesión -->
+            <div>
+                <i class="bi bi-person-circle" style="color: white; font-size: 2rem;"></i>
+                <a class="navbar-brand" href="#">Jhonatan Martinez</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-end">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../cliente_list.html">Clientes
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Agendaciones
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../schedule/index_scheduled_appointments.html">Por realizar</a>
+                            <a class="dropdown-item" href="../postpone/index_postpone_services.html">Aplazados</a>
+                            <a class="dropdown-item" href="../finished/index_finished_appointment.html">Finalizados</a>
+                            <a class="dropdown-item" href="../cancel/index_cancel_appointment.html">Canceladas</a>
+
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../service_schedule/index_agenda.html">Calendario</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Log out</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h3 class="mt-4 text-center">Servicios Agendados</h3>
+        <div class="row justify-content-center">
+
+            <!-- rapid search bar -->
+            <div class="col-12 col-md-5 d-flex mb-2 px-2">
+                <input class="form-control" type="text" id="search" placeholder="Nombre, Barrio, Apellido">
+                <button class="btn btn-success mx-2" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- services appointment card -->
+            <div class="col-12 col-md-4 col-lg-3 p-2">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text">
+                                    Nombre: Madeleine
+                                </p>
+                                <p class="card-text">
+                                    Apellido: Mogollon
+                                </p>
+                                <p class="card-text">
+                                    Barrio: Los caracoles
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="card-text">
+                                    Fecha: 26 Abril 2024
+                                </p>
+                                <p class="card-text">
+                                    Hora: 4:50pm
+                                </p>
+                                <p class="card-text">
+                                    Dia: Martes
+                                </p>
+
+                            </div>
+                            <div class="col-12 text-center">
+                                <div class="mb-3">
+                                    <h4 class="card-title">Acciones</h4>
+                                    <button class="btn btn-info mb-2" data-bs-target="#modal_appointment_details"
+                                        data-bs-toggle="modal">Detalles</button>
+                                    <a class="btn btn-success mb-2" href="./modifyService.view.html">Aplazar</a>
+                                    <button class="btn btn-danger mb-2" data-bs-target="#modal_cancel_appointment"
+                                        data-bs-toggle="modal">cancelar</button>
+                                    <button class="btn btn-success mb-2" data-bs-target="#modal_appointment_state"
+                                        data-bs-toggle="modal">Estado</button>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="card-text">Estado</p>
+                                    <h4 class="card-title">Por Atención</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- services appointment card -->
+            
+        </div>
+        <!-- Jhonatan samuel Martinez Hernandez -->
+        <!-- Software Analysis and Development -->
+
+        <!---------------------------------- modals -------------------->
+
+        <!-- modal confirm appointment details -->
+        <div class="modal fade" id="modal_confirm__appointment_details">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Confirmar detalles del servicio</h1>
+                        <button class="btn btn-close" type="button" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="form-group">
+                            <div class="row">
+                                <!-- details of client -->
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="">Cc/id cliente</label>
+                                        <input type="text" class="form-control" value="12384231">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="">Nombre del cliente</label>
+                                        <input type="text" class="form-control" value="Luis David hoyos mogollon">
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="">Telefono</label>
+                                        <input type="text" class="form-control" value="31483272834">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="">Barrio</label>
+                                        <input type="text" class="form-control" value="Los caracoles">
+
+                                    </div>
+
+                                </div>
+                                <!-- details of appointment-->
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="date_of_appointment">Fechad de la cita</label>
+                                        <input id="date_of_appointment" class="form-control" type="text"
+                                            value="13/02/2024">
+                                    </div>
+                                    <!-- hour for the selected day -->
+                                    <div class="mb-3">
+                                        <label for="">hora</label>
+                                        <input class="form-control" type="text" value="10:30Am">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="">valor</label>
+                                        <input type="text" class="form-control" value="45,000">
+
+                                    </div>
+                                </div>
+                                <!-- details of offered service -->
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="">Descripción</label>
+                                        <textarea class="form-control" type="number" rows="10"
+                                            placeholder="detalles del servicio a prestar"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 text-center">
+                                    <button class="btn btn-danger" type="button"
+                                        data-bs-target="#modal_modify_appointment_date" data-bs-toggle="modal"
+                                        data-bs-dismiss="modal">volver</button>
+
+                                    <button class="btn btn-success" type="button" data-bs-target="#modal_confirm_save"
+                                        data-bs-toggle="modal" data-bs-dismiss="modal">confirmar</button>
+
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal save service -->
+        <div class="modal fade" id="modal_confirm_save">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title"></h1>
+                        <button class="btn btn-close" type="button" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container text-center">
+                            <p>
+                                La fecha de atención al cliente se ha modificado de manera exitosa
+                            </p>
+                            <i class="bi bi-check" style="font-size: 10rem; font-weight:4rem"></i>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col text-center">
+                            <button class="btn btn-success" type="button" data-bs-dismiss="modal">Aceptar</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal appointment details -->
+        <div class="modal fade" id="modal_appointment_details">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Detalles de la cita</h3>
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row mt-4">
+                            <!-- details of appointment-->
+                            <div class="col-12 col-md-4">
+                                <div class="mb-3">
+                                    <p>Fecha de la cita: 13/02/2024</p>
+                                    <!-- hour for the selected day -->
+                                    <p>Hora: 10:30Am</p>
+                                </div>
+
+                                <div class="mb-3">
+                                    <p>Categoria: Mantenimiento</p>
+                                </div>
+                            </div>
+                            <!-- details of client -->
+                            <div class="col-12 col-md-4">
+                                <div class="mb-3">
+                                    <p>Id: 3253824</p>
+                                </div>
+                                <div class="mb-3">
+                                    <p>Nombre: Luis</p>
+                                </div>
+                                <div class="mb-3">
+                                    <p>Telefono: 32523482</p>
+                                </div>
+                                <div class="mb-3">
+                                    <p>Barrio: los caracoles</p>
+                                </div>
+                                <div class="mb-3">
+                                    <p>Dirección: calle 34 Mz 4</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <!-- details of offered service -->
+                                <div class="mb-3">
+                                    <h4>Descripción</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, incidunt.
+                                    </p>
+                                </div>
+                                <div class="mb-3">
+                                    <p>Valor estimado: 45.000</p>
+                                </div>
+                            </div>
+                            <div class="mb-3 text-center">
+
+                                <button class="btn btn-success" type="button" data-bs-dismiss="modal">Listo</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal for cancel a scheduled service -->
+        <div class="modal fade" id="modal_cancel_appointment">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <h3>
+                                ¿ Seguro que desea cancelar el servicio a prestar ?
+                            </h3>
+                            <i class="bi bi-question-circle" style="font-size: 5rem; font-weight:4px"></i>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success">confirmar</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal">cancelar</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal change appointment state -->
+        <div class="modal fade" id="modal_appointment_state">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Estado de atención del cliente</h3>
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="mb-3">
+                                <label for="">Atendido</label>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Cancelado</label>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Aplazado</label>
+                                <input type="checkbox" name="" id="">
+                            </div>
+                            <div class="text-center"></div>
+                            <button class="btn btn-success"> <i class="bi bi-file"></i>Guardar</button>
+                            <button class="btn btn-danger" data-bs-dismiss="modal">cancelar</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Jhonatan samuel Martinez Hernandez -->
+        <!-- Software Analysis and Development -->
+
+
+        <script src="../../src/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../inventario/inventory-main.css">
+    <link rel="stylesheet" href="../src/icons/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <!--persona online en sesión -->
+            <div>
+                <i class="bi bi-person-circle" style="color: white; font-size: 2rem;"></i>
+                <a class="navbar-brand" href="#">Jhonatan Martinez</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Clientes
+                        </a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- en el contenedor dashboard se introducirán todas las visas que se relacionan con el inventario. 
+        es dinamico y cambiará su contenido segun la vista -->
+    <div class="container" id="dashboard">
+        <!-- boton de crear registros -->
+        <button class="btn btn-success mt-2" type="button" data-bs-toggle="modal"
+            data-bs-target="#modal_create_client"><i class="bi bi-plus-circle"></i> Añadir cliente</button>
+
+        <!--barra de busqueda de registros-->
+        <div class="row mt-4 justify-content-center mb-2">
+            
+            <!-- busquedad por otros parametros -->
+            <div class="col-12 col-md-5 d-flex mb-2">
+                <input class="form-control" type="text" id="search" placeholder="Nombre, Barrio, Apellido">
+                <button class="btn btn-success mx-2" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+
+        <!-- clients container -->
+        <h1 class="mb-3 text-center">Clientes</h1>
+        <!-- barra separadora -->
+        <div style="height: 0.5rem;background-color:rgb(173, 173, 173);"></div>
+        <!-- clients -->
+        <div class="scrollable" style="height: 400px; overflow-y: scroll;">
+            <div id="clients">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Cc</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Barrio</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1241312</th>
+                            <td>Luis</td>
+                            <td>Mogollon</td>
+                            <td>Los caracoles</td>
+                            <td>
+                                <a type="button" href="./client_details.html"><i class="bi bi-eye"></i></a>
+                                <a type="button" data-bs-toggle="modal" data-bs-target="#modal_For_validate_delete"><i class="bi bi-trash"></i></a>
+                                <a type="button" data-bs-toggle="modal" data-bs-target="#modal_modify_client"><i class="bi bi-pencil"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1241312</th>
+                            <td>Luis</td>
+                            <td>Mogollon</td>
+                            <td>Los caracoles</td>
+                            <td>
+                                <a type="button" href="./client_details.html"><i class="bi bi-eye"></i></a>
+                                <a type="button" data-bs-toggle="modal" data-bs-target="#modal_For_validate_delete"><i class="bi bi-trash"></i></a>
+                                <a type="button" data-bs-toggle="modal" data-bs-target="#modal_modify_client"><i class="bi bi-pencil"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1241312</th>
+                            <td>Luis</td>
+                            <td>Mogollon</td>
+                            <td>Los caracoles</td>
+                            <td>
+                                <a type="button" href="./client_details.html"><i class="bi bi-eye"></i></a>
+                                <a type="button" data-bs-toggle="modal" data-bs-target="#modal_For_validate_delete"><i class="bi bi-trash"></i></a>
+                                <a type="button" data-bs-toggle="modal" data-bs-target="#modal_modify_client"><i class="bi bi-pencil"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- ventana modal para validación de eliminar un registro -->
+    <div class="modal fade" id="modal_For_validate_delete" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ventana de validación</h2>
+                        <!-- button for close modal windows -->
+                        <button class="btn btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>Estas seguro que quieres realizar esta acción</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Aceptar</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal create new client -->
+    <div class="modal fade" id="modal_create_client">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Crear nuevo cliente</h1>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form-group">
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_id_card">CC</label>
+                                    <input class="form-control" id="client_id_card" type="number">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_firstname">Primer nombre</label>
+                                    <input class="form-control" id="client_firstname" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_secundtname">Segundo nombre</label>
+                                    <input class="form-control" id="client_secundtname" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_first_lastname">Primer apellido</label>
+                                    <input class="form-control" id="client_first_lastname" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_secund_lastname">Segundo apellido</label>
+                                    <input class="form-control" id="client_secund_lastname" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_phone">Teléfono</label>
+                                    <input class="form-control" id="client_phone" type="number">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_address">Dirección</label>
+                                    <input class="form-control" id="client_address" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_neighborhood">Barrio</label>
+                                    <select class="form-select" id="client_neighborhood">
+                                        <option selected>---</option>
+                                        <option value="san fernando">San fernando</option>
+                                        <option value="san fernando">La central</option>
+                                        <option value="san fernando">Los caracoles</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="mb-3">
+                                        <button class="btn btn-success">Añadir barrio</button>
+
+                                    </div>
+                                    <label class="form-label" for="client_add_neighborhood">Nuevo Barrio</label>
+                                    <input class="form-control" id="client_add_neighborhood" type="text">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-success" type="submit">Añadir</button>
+                            <a class="btn btn-danger" href="">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal for modifying client basic data -->
+    <div class="modal fade" id="modal_modify_client">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Modificar datos del cliente</h1>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form-group">
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_id_card">CC</label>
+                                    <input class="form-control" id="client_id_card" type="number">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_firstname">Primer nombre</label>
+                                    <input class="form-control" id="client_firstname" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_secundtname">Segundo nombre</label>
+                                    <input class="form-control" id="client_secundtname" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_first_lastname">Primer apellido</label>
+                                    <input class="form-control" id="client_first_lastname" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_secund_lastname">Segundo apellido</label>
+                                    <input class="form-control" id="client_secund_lastname" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_phone">Teléfono</label>
+                                    <input class="form-control" id="client_phone" type="number">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_address">Dirección</label>
+                                    <input class="form-control" id="client_address" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="client_neighborhood">Barrio</label>
+                                    <select class="form-select" id="client_neighborhood">
+                                        <option selected>---</option>
+                                        <option value="san fernando">San fernando</option>
+                                        <option value="san fernando">La central</option>
+                                        <option value="san fernando">Los caracoles</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="mb-3">
+                                        <button class="btn btn-success">Añadir barrio</button>
+
+                                    </div>
+                                    <label class="form-label" for="client_add_neighborhood">Nuevo Barrio</label>
+                                    <input class="form-control" id="client_add_neighborhood" type="text">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-success" type="submit">Añadir</button>
+                            <a class="btn btn-danger" href="">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

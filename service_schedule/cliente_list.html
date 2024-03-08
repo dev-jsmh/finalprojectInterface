@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/icons/font/bootstrap-icons.min.css">
+    <title>Clientes del negocio</title>
+</head>
+
+<body>
+    <!-- Jhonatan Samuel Martinez Hernandez -->
+    <!-- Software Analysis and Development -->
+    <nav class="navbar navbar-expand-md bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <!--persona online en sesión -->
+            <div>
+                <i class="bi bi-person-circle" style="color: white; font-size: 2rem;"></i>
+                <a class="navbar-brand" href="#">Jhonatan Martinez</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-end">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../service_schedule/cliente_list.html">Clientes
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            Agendaciones
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="./schedule/index_scheduled_appointments.html">Por realizar</a>
+                            <a class="dropdown-item" href="./postpone/index_postpone_services.html">Aplazados</a>
+                            <a class="dropdown-item" href="./finished/index_finished_appointment.html">Finalizados</a>
+                            <a class="dropdown-item" href="./cancel/index_cancel_appointment.html">Canceladas</a>
+
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../service_schedule/index_agenda.html">Calendario</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Log out</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-4 justify-content-center mb-2">
+
+            <!-- busquedad por otros parametros -->
+            <div class="col-12 col-md-5 d-flex mb-2">
+                <input class="form-control" type="text" id="search" placeholder="Nombre, Barrio, Apellido">
+                <button class="btn btn-success mx-2" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+        <!-- clients container -->
+        <h1 class="mb-3 text-center">Lista clientes</h1>
+        <!-- barra separadora -->
+        <div style="height: 0.5rem;background-color:rgb(173, 173, 173);"></div>
+        <!-- clients -->
+        <div class="scrollable" style="height: 400px; overflow-y: scroll;">
+            <div id="clients">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Estado</th>
+                            <th scope="col">U-revision</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- client -->
+                        <tr>
+                            <th scope="row">
+                                <i class="bi bi-circle-fill" style="color: rgb(75, 241, 75);"></i>
+                            </th>
+                            <td>14 Marzo 2023</td>
+                            <td>Luis Mogollon</td>
+
+                            <td>
+                                <!-- acciones vista de agendar servicio-->
+                                <a class="btn btn-success m-2" 
+                                type="button" href="./schedule/createService.view.html">Agendar
+                                </a>
+                                <!-- acciones modal mostrar información básica del cliente-->
+                                <button class="btn btn-info m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_client_details"><i class="bi bi-plus-circle"></i>
+                                    info
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- client -->
+                        <tr>
+                            <th scope="row">
+                                <i class="bi bi-circle-fill" style="color: rgb(75, 241, 75);"></i>
+                            </th>
+                            <td>14 Marzo 2023</td>
+                            <td>Luis Mogollon</td>
+
+                            <td>
+                                <button class="btn btn-success m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_schedule_service">Agendar
+                                </button>
+                                <button class="btn btn-info m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_client_details"><i class="bi bi-plus-circle"></i>
+                                    info</button>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- client -->
+                        <tr>
+                            <th scope="row">
+                                <i class="bi bi-circle-fill" style="color: rgb(75, 241, 75);"></i>
+                            </th>
+                            <td>14 Marzo 2023</td>
+                            <td>Luis Mogollon</td>
+
+                            <td>
+                                <button class="btn btn-success m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_schedule_service">Agendar
+                                </button>
+                                <button class="btn btn-info m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_client_details"><i class="bi bi-plus-circle"></i>
+                                    info</button>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- client -->
+                        <tr>
+                            <th scope="row">
+                                <i class="bi bi-circle-fill" style="color: rgb(241, 75, 75);"></i>
+                            </th>
+                            <td>Diciembre 7 2023</td>
+                            <td>Andrea Silva</td>
+
+                            <td>
+                                <button class="btn btn-success m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_schedule_service">Agendar
+                                </button>
+                                <button class="btn btn-info m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_client_details"><i class="bi bi-plus-circle"></i>
+                                    info</button>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- client -->
+                        <tr>
+                            <th scope="row">
+                                <i class="bi bi-circle-fill" style="color: rgb(241, 75, 75);"></i>
+                            </th>
+                            <td>Diciembre 7 2023</td>
+                            <td>Andrea Silva</td>
+
+                            <td>
+                                <button class="btn btn-success m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_schedule_service">Agendar
+                                </button>
+                                <button class="btn btn-info m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_client_details"><i class="bi bi-plus-circle"></i>
+                                    info</button>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- client -->
+                        <tr>
+                            <th scope="row">
+                                <i class="bi bi-circle-fill" style="color: rgb(75, 163, 241);"></i>
+                            </th>
+                            <td>14 Marzo 2023</td>
+                            <td>Luis Mogollon</td>
+
+                            <td>
+                                <button class="btn btn-success m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_schedule_service">Agendar
+                                </button>
+                                <button class="btn btn-info m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_client_details"><i class="bi bi-plus-circle"></i>
+                                    info</button>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- client -->
+                        <tr>
+                            <th scope="row">
+                                <i class="bi bi-circle-fill" style="color: rgb(75, 163, 241);"></i>
+                            </th>
+                            <td>14 Marzo 2023</td>
+                            <td>Luis Mogollon</td>
+
+                            <td>
+                                <button class="btn btn-success m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_schedule_service">Agendar
+                                </button>
+                                <button class="btn btn-info m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_client_details"><i class="bi bi-plus-circle"></i>
+                                    info</button>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- client -->
+                        <tr>
+                            <th scope="row">
+                                <i class="bi bi-circle-fill" style="color: rgb(75, 163, 241);"></i>
+                            </th>
+                            <td>14 Marzo 2023</td>
+                            <td>Luis Mogollon</td>
+
+                            <td>
+                                <button class="btn btn-success m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_schedule_service">Agendar
+                                </button>
+                                <button class="btn btn-info m-2" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal_client_details"><i class="bi bi-plus-circle"></i>
+                                    info</button>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- modal schedule appointment -->
+    <div class="modal fade" id="modal_schedule_service">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Agendar servicio</h1>
+                    <button class="btn btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form-group">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="mb-3">
+                                    <label for="">selecionar servicio</label>
+                                    <select class="form-control" type="text">
+                                        <option selected value="">---</option>
+                                        <option value="">Mantenimiento</option>
+                                        <option value="">Reparación de equipo</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="">Otro servicio</label>
+                                    <input class="form-control" type="text" placeholder="Revición preventiva">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="">Valor</label>
+                                    <input class="form-control" type="text" placeholder="45,000">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="">Descripción</label>
+                                    <textarea class="form-control" type="number"
+                                        placeholder="detalles del servicio a prestar"></textarea>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="mb-3">
+                                    <label for="date_of_appointment">Fecha de la cita</label>
+                                    <input id="date_of_appointment" class="form-control" type="date">
+                                </div>
+                                <!-- available hours for the selected day -->
+                                <div class="mb-3">
+                                    <label for="">horas disponibles</label>
+                                    <div class="hours">
+                                        <div class="scrollable" style="height: 200px; overflow-y: scroll;">
+                                            <ul>
+                                                <li>
+                                                    <label for="">06:00am</label>
+                                                    <input type="checkbox" name="" id="">
+                                                </li>
+                                                <li>
+                                                    <label for="">07:00am</label>
+                                                    <input type="checkbox" name="" id="">
+                                                </li>
+                                                <li>
+                                                    <label for="">08:00am</label>
+                                                    <input type="checkbox" name="" id="">
+                                                </li>
+                                                <li>
+                                                    <label for="">09:00am</label>
+                                                    <input type="checkbox" name="" id="">
+                                                </li>
+
+                                                <li>
+                                                    <label for="">010:00am</label>
+                                                    <input type="checkbox" name="" id="">
+                                                </li>
+                                                <li>
+                                                    <label for="">11:00am</label>
+                                                    <input type="checkbox" name="" id="">
+                                                </li>
+                                                <li>
+                                                    <label for="">12:00am</label>
+                                                    <input type="checkbox" name="" id="">
+                                                </li>
+                                                <li>
+                                                    <label for="">01:00pm</label>
+                                                    <input type="checkbox" name="" id="">
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- client details -->
+    <div class="modal fade" id="modal_client_details">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Detalles del cliente</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!-- details of client -->
+                        <div class="col">
+                            <p>Id: 23843</p>
+                            <p>Nombre: Luis Mogollon</p>
+                            <p>Ultima atención: 14 Marzo 2023</p>
+                            <p>Proxima atención: 14 julio 2023</p>
+                            <p>Estado: por Atención</p>
+                            <p>Telefono: 32619482</p>
+                            <p>Barrio: Los caracoles</p>
+                            <p>Dirección: Trans 38 #12- 107</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../src/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

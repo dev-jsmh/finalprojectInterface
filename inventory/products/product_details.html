@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del producto</title>
+    <link href="../../src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inventory-main.css">
+    <link rel="stylesheet" href="../../src/icons/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a href="./index_products.html">
+                <i class="bi-arrow-left" style="font-size: 1.5rem;font-weight: bold; color: white;"></i>
+            </a>
+            <h5>
+                Detalles del producto
+            </h5>
+            
+        </div>
+    </nav>
+    <div class="container">
+        
+        <div class="row mt-4">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-2 p-2">
+                <img class="col-12"
+                src="../../src/images/WhatsApp Image 2022-09-07 at 11.54.51 AM (1).jpeg"
+                    style="height: 18rem; border-radius: 0.5rem;" 
+                    alt="purificador de aguas">
+                    <div class="mt-2 text-center">
+                        <!-- compra de producto -->
+                        <button class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#modal_add_stock"
+                            data-bs-dismiss="modal">
+                            <i class="bi bi-plus-circle"></i>
+                            comprar
+                        </button>
+                        <!-- modificar producto -->
+                        <button class="btn btn-success m-2" type="button" data-bs-toggle="modal"
+                            data-bs-target="#modal_modify_product" data-bs-dismiss="modal">
+                            <i class="bi bi-save"></i>Modificar
+                        </button>
+                    </div>
+                </div>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="mt-2 mb-3">
+                    <p>Codigo producto: 18323</p>
+                </div>
+                <div class="mb-3">
+                    <p>Nombre: Purificador de agua</p>
+                </div>
+                <div class="mb-3">
+                    <p>Valor de compra: 150.000</p>
+                </div>
+                <div class="mb-3">
+                    <p>Unidades disponibles:12</p>
+                </div>
+                <div class="mb-3">
+                    <p>Modelo: Manzana verde</p>
+                </div>
+                <div class="col mb-3">
+                    <p>Categoria: Planta Purificadora</p>
+                </div>
+                <div class="col mb-3">
+                    <p>id categoria: 2</p>
+                </div>
+               
+            </div>
+        
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+                
+            <p>Purificador de agua con ozono, modelo manzana verde, 
+                esta fabricado en material de acrilico resistente a 
+                la corroción y duradero en el tiempo. calidad 100% y 
+                mas asequible que otros modelos que tenemos disponibles</p>
+            
+        </div>
+    </div>
+    
+    <!-- modal for modify product data -->
+    <div class="modal fade" id="modal_modify_product">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Modificar información producto</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form-group">
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-4">
+                                <div class="mb-3">
+                                   <p>Codigo del producto: 241443</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="product_name">Nombre</label>
+                                    <input class="form-control" id="product_name" type="text">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="">Modelo</label>
+                                    <input class="form-control" id="" type="text">
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-4">
+                                
+                                <div class="d-flex justify-content-between">
+                                    <div class="col-5 mb-3">
+                                        <label class="form-label" for="product_category">Categoria</label>
+                                        <select class="form-control" id="product_category" type="text">
+                                            <option>Planta de agua</option>
+                                            <option>Cartuchos</option>
+                                            <option>Botones</option>
+                                            <option>Cables</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-5 mb-3">
+                                        <label class="form-label" for="product_category_id">Id categoria</label>
+                                        <input class="form-control" id="product_category_id" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="">Descripción</label>
+                                    <textarea class="form-control" id=""></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="">imagen</label>
+                                    <input class="form-control" id="" type="file">
+                                </div>
+                                <div class="mb-3">
+                                    <img src="../../src/images/WhatsApp Image 2022-09-07 at 11.54.51 AM (1).jpeg" alt=""
+                                        style="height: 5rem">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-success" type="submit">Añadir</button>
+                            <a class="btn btn-danger" href="">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ventana modal para validación de eliminar un producto -->
+    <div class="modal fade" id="modalForValidateDelete" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ventana de validación</h2>
+                        <!-- button for close modal windows -->
+                        <button class="btn btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>Estas seguro que quieres realizar esta acción</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Aceptar</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal for add stock -->
+    <div class="modal fade" id="modal_add_stock" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">compra de stock</h2>
+                        <!-- button for close modal windows -->
+                        <button class="btn btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="" class="form-group">
+                        <div class="row">
+
+                            <div class="mb-3">
+                                <label class="form-label" for="product_provider_id">Id proveedor</label>
+                                <select class="form-control" id="product_provider_id" type="number">
+                                    <option selected>---</option>
+                                    <option>1234</option>
+                                    <option>3635</option>
+                                    <option>333333</option>
+                                    <option>444444</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="product_provider_name">Nombre
+                                    proveedor</label>
+                                <select class="form-control" id="product_provider_name" type="text">
+                                    <option selected>---</option>
+
+                                    <option>juan camilo</option>
+                                    <option>Roberto Enrique</option>
+                                    <option>Luis mario</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="product_category_id">Cantidad</label>
+                                <input class="form-control" id="product_category_id" type="number">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="">Valor de compra</label>
+                                <input class="form-control" id="" type="text">
+                            </div>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-success" type="submit">comprar</button>
+                            <a class="btn btn-danger" href="">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../../src/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

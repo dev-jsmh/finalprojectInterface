@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../../src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inventory-main.css">
+    <link rel="stylesheet" href="../../src/icons/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <!--persona online en sesión -->
+            <div>
+                <i class="bi bi-person-circle" style="color: white; font-size: 2rem;"></i>
+                <a class="navbar-brand" href="#">Jhonatan Martinez</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="inventory.html">Registros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../products/index_products.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../proveedores/index_proveedores.html">Proveedores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- en el contenedor dashboard se introducirán todas las visas que se relacionan con el inventario. 
+        es dinamico y cambiará su contenido segun la vista -->
+    <div class="container">
+        <!-- boton de crear registros -->
+        <a class="btn btn-primary m-2" href="./CreateRecord.html"><i class="bi bi-plus-circle"></i> Crear Novedad</a>
+
+        <!-- 
+<button class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#create_record"><i
+                class="bi bi-plus-circle"></i> Crear Novedad</button>
+
+        -->
+
+        <!--barra de busqueda de registros-->
+        <div class="row mt-4 justify-content-between mb-2">
+            <!--busqueda por categoria-->
+            <div class="col-12 col-md-5 d-flex mb-2 justify-content-center">
+                <select class="form-select" id="input-group-text">
+                    <option selected>Buscar por</option>
+                    <option value="1">Egreso</option>
+                    <option value="2">Ingreso</option>
+                </select>
+                <button class="btn btn-success mx-2">Buscar</button>
+            </div>
+            <!-- busquedad por otros parametros -->
+            <div class="col-12 col-md-5 d-flex mb-2">
+                <input class="form-control" type="text" id="search" placeholder="Categoria, fecha, etc">
+                <button class="btn btn-success mx-2" type="submit">Search</button>
+            </div>
+        </div>
+
+        <!-- contenedor de registros -->
+        <h1 class="mb-3">Novedades</h1>
+        <!-- barra separadora -->
+        <div style="height: 0.5rem;background-color:rgb(173, 173, 173);"></div>
+        <!-- registros -->
+        <div class="scrollable" style="height: 400px; overflow-y: scroll;">
+            <div id="records">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 col-md-3 mb-2">
+                                <p>Fecha: <span id="date">8/febrero/2023</span></p>
+                                <p>Cantidad:<span id="product-cuantity">1</span></p>
+                            </div>
+                            <div class="col-6 col-md-3 mb-2">
+                                <p>Categoria: <span id="record-category">Egreso</span></p>
+                                <p>Producto: <span id="product">Planta purificadora de agua</span></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="d-flex justify-content-center">
+
+                                    <!-- modal triger example-->
+                                    <button class="btn btn-primary m-2" data-bs-toggle="modal"
+                                        data-bs-target="#modalForValidateDelete"><i
+                                            class="bi bi-trash">eliminar</i></button>
+                                    <a class="btn btn-primary m-2" href="./recordDetails.html"><i class="bi bi-eye"></i>Detalles</a>
+                                    <a class="btn btn-primary m-2" href="./modifyRecord.html" ><i class="bi bi-pencil"></i>Modificar</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 col-md-3 mb-2">
+                                <p>Fecha: <span id="date">13/Marzo/2023</span></p>
+                                <p>Cantidad:<span id="product-cuantity">1</span></p>
+                            </div>
+                            <div class="col-6 col-md-3 mb-2">
+                                <p>Categoria: <span id="record-category">Egreso</span></p>
+                                <p>Producto: <span id="product">Planta purificadora de agua</span></p>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="d-flex justify-content-center">
+
+                                    <!-- modal triger example-->
+                                    <button class="btn btn-primary m-2" data-bs-toggle="modal"
+                                        data-bs-target="#modalForValidateDelete"><i
+                                            class="bi bi-trash">eliminar</i></button>
+                                    <a class="btn btn-primary m-2" href="./recordDetails.html"><i class="bi bi-eye"></i>Detalles</a>
+                                    <a class="btn btn-primary m-2" href="./modifyRecord.html"><i class="bi bi-pencil"></i>Modificar</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div> <!-- container end -->
+
+    <!-- modal create record
+
+    
+    <div class="modal fade" id="create_record">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Crear registro</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row d-flex">
+                            <div class="col-12 col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="id-record">ID</label>
+                                    <input class="form-control" id="id-record" type="number" placeholder="15">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="recordDate">Fecha</label>
+                                    <input class="form-control" id="recordDate" type="datetime-local"
+                                        placeholder="26 abril 2023">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="recordCategory">Categoria</label>
+                                    <select class="form-select" id="recordCategory">
+                                        <option selected>Categoria</option>
+                                        <option value="1">Egreso</option>
+                                        <option value="2">Ingreso</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                     concepto del registro 
+                                    <label class="form-label" for="recordCategory">Concepto o Razon</label>
+                                    <select class="form-select" id="recordCategory">
+                                        <option selected>Garantia</option>
+                                        <option value="1">Devolución</option>
+                                        <option value="2"></option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="productoOfRecord">Producto</label>
+                                    <div class="select-product">
+                                        <select class="form-select mb-2" id="productoOfRecord" type="text"
+                                            placeholder="producto" value="planta purificadora de agua">
+                                            <option selected="P001">P012</option>
+                                            <option value="P002">P002</option>
+                                            <option value="P003">P003</option>
+                                            <option value="P004">P004</option>
+                                            <option value="P005">P005</option>
+                                            <option value="P006">P006</option>
+                                            <option value="P007">P007</option>
+                                            <option value="P008">P008</option>
+                                            <option value="P009">P009</option>
+                                            <option value="P010">P010</option>
+                                        </select>
+                                        <input class="form-control" type="text" value="planta purificadora de agua">
+
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="recordProductCuantity">Cantidad</label>
+                                    <input class="form-control" id="recordProductCuantity" type="number"
+                                        placeholder="Cantidad" value="1">
+                                </div>
+
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="mb-3">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recordDescription" class="form-label"></label>Descripción
+                                    <textarea class="form-control" id="recordDescription" rows="10"
+                                        placeholder="Ej. puede escribir que el motivo del egreso fue una venta realizada a un nuevo cliente"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4 text-center">
+                            <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <a class="btn btn-success">Registrar</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- modal for modify records data -->
+   <!-- 
+    <div class="modal fade" id="modify_record">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Modificar información</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row d-flex">
+                            <div class="col-12 col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="id-record">ID</label>
+                                    <input class="form-control" id="id-record" type="number" placeholder="15">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="recordDate">Fecha</label>
+                                    <input class="form-control" id="recordDate" type="datetime-local"
+                                        placeholder="26 abril 2023">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="recordCategory">Categoria</label>
+                                    <select class="form-select" id="recordCategory">
+                                        <option selected>Categoria</option>
+                                        <option value="1">Egreso</option>
+                                        <option value="2">Ingreso</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    concepto del registro
+                                    <label class="form-label" for="recordCategory">Concepto o Razon</label>
+                                    <select class="form-select" id="recordCategory">
+                                        <option selected>Garantia</option>
+                                        <option value="1">Devolución</option>
+                                        <option value="2"></option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="productoOfRecord">Producto</label>
+                                    <div class="select-product">
+                                        <select class="form-select mb-2" id="productoOfRecord" type="text"
+                                            placeholder="producto" value="planta purificadora de agua">
+                                            <option selected="P001">P012</option>
+                                            <option value="P002">P002</option>
+                                            <option value="P003">P003</option>
+                                            <option value="P004">P004</option>
+                                            <option value="P005">P005</option>
+                                            <option value="P006">P006</option>
+                                            <option value="P007">P007</option>
+                                            <option value="P008">P008</option>
+                                            <option value="P009">P009</option>
+                                            <option value="P010">P010</option>
+                                        </select>
+                                        <input class="form-control" type="text" value="planta purificadora de agua">
+
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="recordProductCuantity">Cantidad</label>
+                                    <input class="form-control" id="recordProductCuantity" type="number"
+                                        placeholder="Cantidad" value="1">
+                                </div>
+
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                
+                                <div class="mb-3">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recordDescription" class="form-label"></label>Descripción
+                                    <textarea class="form-control" id="recordDescription" rows="10"
+                                        placeholder="Ej. puede escribir que el motivo del egreso fue una venta realizada a un nuevo cliente"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4 text-center">
+                            <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <a class="btn btn-success">Registrar</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <!-- record details -->
+    <div class="modal fade" id="record_details">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Detalles del registro</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="row d-flex">
+                            <div class="col-12 col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="id-record">ID</label>
+                                    <input class="form-control" id="id-record" type="number" placeholder="15">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="recordDate">Fecha</label>
+                                    <input class="form-control" id="recordDate" type="datetime-local"
+                                        placeholder="26 abril 2023">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="recordCategory">Categoria</label>
+                                    <select class="form-select" id="recordCategory">
+                                        <option selected>Categoria</option>
+                                        <option value="1">Egreso</option>
+                                        <option value="2">Ingreso</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <!-- concepto del registro -->
+                                    <label class="form-label" for="recordCategory">Concepto o Razon</label>
+                                    <select class="form-select" id="recordCategory">
+                                        <option selected>Garantia</option>
+                                        <option value="1">Devolución</option>
+                                        <option value="2"></option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="productoOfRecord">Producto</label>
+                                    <div class="select-product">
+                                        <select class="form-select mb-2" id="productoOfRecord" type="text"
+                                            placeholder="producto" value="planta purificadora de agua">
+                                            <option selected="P001">P012</option>
+                                            <option value="P002">P002</option>
+                                            <option value="P003">P003</option>
+                                            <option value="P004">P004</option>
+                                            <option value="P005">P005</option>
+                                            <option value="P006">P006</option>
+                                            <option value="P007">P007</option>
+                                            <option value="P008">P008</option>
+                                            <option value="P009">P009</option>
+                                            <option value="P010">P010</option>
+                                        </select>
+                                        <input class="form-control" type="text" value="planta purificadora de agua">
+
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" for="recordProductCuantity">Cantidad</label>
+                                    <input class="form-control" id="recordProductCuantity" type="number"
+                                        placeholder="Cantidad" value="1">
+                                </div>
+
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <!--
+                                <div class="mb-3">
+                                    <label class="form-label" for="recordProvider">Id proveedor de producto</label>
+                                    <div class="select-provider">
+                                        <select class="form-select mb-2" id="recordProvider" type="text"
+                                            placeholder="Nombre del proveedor" value="Filtros Dennis">
+                                            <option selected="P001">1245</option>
+                                            <option value="P002">1513</option>
+                                            <option value="P003">12424</option>
+                                            <option value="P004">P004</option>
+                                            <option value="P005">P005</option>
+                                            <option value="P006">P006</option>
+                                            <option value="P007">P007</option>
+                                            <option value="P008">P008</option>
+                                            <option value="P009">P009</option>
+                                            <option value="P010">P010</option>
+                                        </select>
+                                        <input class="form-control" type="text" value="Filtros Dennis">
+
+                                    </div>
+                                </div> -->
+                                <div class="mb-3">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recordDescription" class="form-label"></label>Descripción
+                                    <textarea class="form-control" id="recordDescription" rows="10"
+                                        placeholder="Ej. puede escribir que el motivo del egreso fue una venta realizada a un nuevo cliente"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4 text-center">
+                            <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <a class="btn btn-success">Registrar</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ventana modal para validación de eliminar un registro -->
+    <div class="modal fade" id="modalForValidateDelete" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">validar acción</h2>
+                        <!-- button for close modal windows -->
+                        <button class="btn btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>Estas seguro que quieres realizar esta acción</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Aceptar</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../src/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

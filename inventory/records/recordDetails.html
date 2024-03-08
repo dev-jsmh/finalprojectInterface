@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del registro</title>
+    <link href="../../src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inventory-main.css">
+    <link rel="stylesheet" href="../../src/icons/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a href="./inventory.html">
+                <i class="bi-arrow-left" style="font-size: 1.5rem;font-weight: bold; color: white;"></i>
+            </a>
+            <h4 class="mt-4">Detalles del registro</h4>
+
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="row mt-5">
+            <div class="col-sm-12 col-md-4">
+                <div class="mb-3">
+                    <p><strong>Id</strong> 15</p>
+                </div>
+                <div class="mb-3">
+                    <p><strong>Fecha:</strong> 26 abril 2023</p>
+
+                </div>
+                <div class="mb-3">
+                    <p><strong>Categoria:</strong> Egreso</p>
+
+                </div>
+                <!-- concepto del registro -->
+                <div class="mb-3">
+                    <p><strong>Concepto o Razon:</strong> Garantia</p>
+                </div>
+                <div class="mb-3">
+                    <h5>Descripción</h5>
+                    <p>Ej. puede escribir que el motivo del egreso
+                        fue un servicio de garantia prestado a un nuevo cliente
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5 mt-4">
+                <!-- lista de productos -->
+                <h4>Productos requeridos</h4>
+                <div class="mb-3" style="height: 200px; overflow-y: scroll;">
+                    <ul>
+                        <li>
+                            <p>P001 - planta puficador agua $150.00 X 1 </p>
+                        </li>
+                        <li>
+                            <p>P003 - Cartucho filtrante $45.000 X 1 </p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- ajustes y total a pagar -->
+            <div class="col-sm-12 col-md-3 mt-4">
+                <div class="mb-3">
+                    <p><strong>Subtotal:</strong> 195.000</p>
+                </div>
+                <div class="mb-3">
+                    <p><strong>Descuento:</strong> 12.000</p>
+                </div>
+                <!-- total for pay -->
+                <div class="mb-3">
+                    <p><strong>Total Por Pagar:</strong> 183.000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mb-4 text-center">
+            <a class="btn btn-success" href="./inventory.html">Volver</a>
+        </div>
+    </div>
+    <script src="../../src/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

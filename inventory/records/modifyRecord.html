@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar registro</title>
+    <link href="../../src/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../src/icons/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a href="./inventory.html">
+                <i class="bi-arrow-left" style="font-size: 1.5rem;font-weight: bold; color: white;"></i>
+            </a>
+            <h4 class="mt-4">Modificar registro de Novedades</h4>
+            
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="mb-3">
+                    <label class="form-label" for="id-record">ID</label>
+                    <input class="form-control" id="id-record" type="number" placeholder="15">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="recordDate">Fecha</label>
+                    <input class="form-control" id="recordDate" type="datetime-local" placeholder="26 abril 2023">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="recordCategory">Categoria</label>
+                    <select class="form-select" id="recordCategory">
+                        <option selected>Categoria</option>
+                        <option value="1">Egreso</option>
+                        <option value="2">Ingreso</option>
+                    </select>
+                </div>
+                <!-- concepto del registro -->
+                <div class="mb-3">
+                    <label class="form-label" for="recordCategory">Concepto o Razon</label>
+                    <select class="form-select" id="recordCategory">
+                        <option selected>Garantia</option>
+                        <option value="1">Devolución</option>
+                        <option value="2"></option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="recordDescription" class="form-label"></label>Descripción
+                    <textarea class="form-control" id="recordDescription" rows="3"
+                        placeholder="Ej. puede escribir que el motivo del egreso fue una venta realizada a un nuevo cliente"
+                        style="height: 100px; overflow-y: scroll;">
+                    </textarea>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-8 mt-4">
+                <!-- botton for select products -->
+                <div class="mb-3">
+                    <button class="btn btn-success" data-bs-target="#modal_invoce_add_products" data-bs-toggle="modal">
+                        selectionar Productos
+                    </button>
+                </div>
+                <!-- lista de productos -->
+                <h4>Productos requeridos</h4>
+                <div class="mb-3" style="height: 200px; overflow-y: scroll;">
+                    <ul>
+                        <li>
+                            <div class="d-flex p-2">
+                                <label>P001 - planta puficador agua $150.00 </label>
+                                <button class="btn btn-danger mx-1">
+                                    <i class="bi bi-dash-circle"></i>
+                                </button>
+                                <button class="btn btn-success mx-1">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button>
+                                <div class="col-2 mx-1">
+                                    <input class="form-control" type="number">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex p-2">
+                                <label>P001 - planta puficador agua $150.00 </label>
+                                <button class="btn btn-danger mx-1"><i class="bi bi-dash-circle"></i></button>
+                                <button class="btn btn-success mx-1"><i class="bi bi-plus-circle"></i>
+                                </button>
+                                <div class="col-2 mx-1">
+                                    <input class="form-control" type="number">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex p-2">
+                                <label>P001 - planta puficador agua $150.00 </label>
+                                <button class="btn btn-danger mx-1"><i class="bi bi-dash-circle"></i></button>
+                                <button class="btn btn-success mx-1"><i class="bi bi-plus-circle"></i></button>
+                                <div class="col-2 mx-1">
+                                    <input class="form-control" type="number">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="d-flex p-2">
+                                <label>P001 - planta puficador agua $150.00 </label>
+                                <button class="btn btn-danger mx-1"><i class="bi bi-dash-circle"></i></button>
+                                <button class="btn btn-success mx-1"><i class="bi bi-plus-circle"></i></button>
+                                <div class="col-2 mx-1">
+                                    <input class="form-control" type="number">
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- total for pay -->
+                <div class="mb-3">
+                    <label for="">Total Por Pagar</label>
+                    <input type="text" class="form-control" value="70.000">
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mb-4 text-center">
+            <a class="btn btn-primary" href="./inventory.html">Registrar</a>
+            <a class="btn btn-success" href="./inventory.html">Cancelar</a>
+        </div>
+        <script src="../../src/js/bootstrap.bundle.min.js"></script>
+    </div>
+    <!-- modal for selecting products -->
+    <div class="modal fade" id="modal_invoce_add_products">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Selección de productos</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="false">
+                        <!-- rapid search bar -->
+                        <div class="col-auto d-flex mb-2 px-2">
+                            <input class="form-control" type="text" id="search" placeholder="Nombre, Barrio, Apellido">
+                            <button class="btn btn-success mx-2" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+                    <form class="form-group">
+                        <div class="mb-3" style="height: 200px; overflow-y: scroll;">
+                            <ul>
+                                <li>
+                                    <input type="checkbox">
+                                    <label>P001 - planta puficador agua $150.00 </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox">
+                                    <label>P001 - planta puficador agua $150.00 </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox">
+                                    <label>P001 - planta puficador agua $150.00 </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox">
+                                    <label>P001 - planta puficador agua $150.00 </label>
+                                </li>
+                                <li>
+                                    <input type="checkbox">
+                                    <label>P001 - planta puficador agua $150.00 </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-success" data-bs-dismiss="modal">Agregar</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../src/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

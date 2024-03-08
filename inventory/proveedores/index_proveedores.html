@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proveedores</title>
+    <link href="../../src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../inventory-main.css">
+    <link rel="stylesheet" href="../../src/icons/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <!-- Jhonatan Samuel Martinez Hernandez -->
+
+    <nav class="navbar navbar-expand-md bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <!--persona online en sesión -->
+            <div>
+                <i class="bi bi-person-circle" style="color: white; font-size: 2rem;"></i>
+                <a class="navbar-brand" href="#">Jhonatan Martinez</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../records/inventory.html">Registros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../products/index_products.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="../proveedores/index_proveedores.html">Proveedores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="row">
+                <!-- formulario de datos para proveedores -->
+                <div class="col-12 col-md-4 mt-5">
+                    <form id="providers_form">
+                        <div class="mb-3">
+                            <label class="form-label" for="providerName">Nombre del proveedor</label>
+                            <input class="form-control" id="providerName" type="text" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="providerAddress">Dirección</label>
+                            <input class="form-control" id="providerAddress" type="text" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="providerNeighborhood">Barrio</label>
+                            <input class="form-control" id="providerNeighborhood" type="text" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="providerPhone">Telefono</label>
+                            <input class="form-control" id="providerPhone" type="text" required>
+                        </div>
+
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-primary">Añadir</button>
+                            <button class="btn btn-danger">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+    <!-- Jhonatan Samuel Martinez Hernandez -->
+
+                <!-- lista de proveedores -->
+                <div class="col-12 col-md-8 mt-5">
+
+                    <h3 class="title">Lista de proveedores</h3>
+                    <!-- rapid search bar -->
+                    <div class="col-12 d-flex mb-2 px-2">
+                        <input class="form-control" type="text" id="search" placeholder="Nombre, Barrio, Apellido">
+                        <button class="btn btn-success mx-2" type="submit"><i class="bi bi-search"></i></button>
+                    </div>
+                    <!-- providers list -->
+                    <div class="scrollable mb-4" style="height: 500px; overflow-y: scroll;">
+                        <div id="providerList">
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <p>Id:<span id="providerId">1302392</span></p>
+                                            <p>Telefono:<span id="providerPhone">65874857</span></p>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <p>Nombre: <span id="providerName">Filtros dennis</span></p>
+                                            <p>Dirección: <span id="providerAddress">Barrio las gaviotas</span></p>
+                                        </div>
+                                        <div class="col-12 col-md-4">
+                                            <div class="text-center">
+
+                                                <!-- modal triger example-->
+                                                <button class="btn btn-primary m-2" data-bs-toggle="modal"
+                                                    data-bs-target="#modalForValidateDelete">Eliminar</button>
+                                                <button class="btn btn-primary m-2">Modificar</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <p>Id:<span id="providerId">1302392</span></p>
+                                            <p>Telefono:<span id="providerPhone">65874857</span></p>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <p>Nombre: <span id="providerName">Filtros dennis</span></p>
+                                            <p>Dirección: <span id="providerAddress">Barrio las gaviotas</span></p>
+                                        </div>
+                                        <div class="col-12 col-md-4">
+                                            <div class="text-center">
+
+                                                <!-- modal triger example-->
+                                                <button class="btn btn-primary m-2" data-bs-toggle="modal"
+                                                    data-bs-target="#modalForValidateDelete">Eliminar</button>
+                                                <button class="btn btn-primary m-2">Modificar</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <p>Id:<span id="providerId">1302392</span></p>
+                                            <p>Telefono:<span id="providerPhone">65874857</span></p>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <p>Nombre: <span id="providerName">Filtros dennis</span></p>
+                                            <p>Dirección: <span id="providerAddress">Barrio las gaviotas</span></p>
+                                        </div>
+                                        <div class="col-12 col-md-4">
+                                            <div class="text-center">
+
+                                                <!-- modal triger example-->
+                                                <button class="btn btn-primary m-2" data-bs-toggle="modal"
+                                                    data-bs-target="#modalForValidateDelete">Eliminar</button>
+                                                <button class="btn btn-primary m-2">Modificar</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    <!-- Jhonatan Samuel Martinez Hernandez -->
+
+                            <div class="card m-2">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <p>Id:<span id="providerId">1302392</span></p>
+                                            <p>Telefono:<span id="providerPhone">65874857</span></p>
+                                        </div>
+                                        <div class="col-6 col-md-4 mb-2">
+                                            <p>Nombre: <span id="providerName">Filtros dennis</span></p>
+                                            <p>Dirección: <span id="providerAddress">Barrio las gaviotas</span></p>
+                                        </div>
+                                        <div class="col-12 col-md-4">
+                                            <div class="text-center">
+
+                                                <!-- modal triger example-->
+                                                <button class="btn btn-primary m-2" data-bs-toggle="modal"
+                                                    data-bs-target="#modalForValidateDelete">Eliminar</button>
+                                                <button class="btn btn-primary m-2">Modificar</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Jhonatan Samuel Martinez Hernandez -->
+
+    <!-- modal de advertencia eliminación de proveedor -->
+    <div class="modal fade" id="modalForValidateDelete" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">ventana de validación</h2>
+                        <!-- button for close modal windows -->
+                        <button class="btn btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>Estas seguro que quieres realizar esta acción</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary">Aceptar</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../src/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
